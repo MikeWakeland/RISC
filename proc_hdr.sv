@@ -4,34 +4,7 @@ localparam PC_SZ_2B   = 11;  // arbitrary = 4KB inst ram
 
 //------------------------------------------
 // UOP -- this is the result of decoding an inst
-//        it contains the control values needed to execute the inst   
-//
-typedef struct packed {
-      logic                   valid;
-      logic [PC_SZ_2B-1:0]     pc;        // addr (2B form) of inst
-
-      //--parts of insts to be used/decoded later
-      //  if a part is not used by inst, what goes here is DC, so can just be inst bits
-      logic [2:0]             func3;      // primary function selector
-      logic                   bit30op;    // secondary ""
-      logic [4:0]             rd;         // the three regsiter address fields
-      logic [4:0]             r1;         //
-      logic [4:0]             r2;         //
-      
-      //--common decodeccontols across multiple insts
-      logic                   wr_en;      // inst write a register with rd addr
-      logic                   rd_en1;     // inst reads a regsiter with r1 addr
-      logic                   rd_en2;     //   "                        r2
-      
-      logic                   ld_op;      // a memory load inst
-      logic                   st_op;      // "        store
-      logic                   add_op;     // any op needing add, selects adder result, see adder in i-unit for details of which ops use
-      logic                   sub_op;     // "                 , turns adder into subtracter
-      logic                   br_op;      // a conditional branch inst
-
-      //--specific inst decode that do unique things
-      logic                   lui;
-      logic                   auipc;
+//        it confzssdfsdfsd
       logic                   jal;
       logic                   jalr;
       logic                   fence;
